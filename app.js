@@ -61,6 +61,108 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     updateCart();
 
+    if(!window.paypal){
+
+    console.error(
+    "PayPal SDK nicht geladen"
+    );
+
+    return;
+
+    }
+
+    paypal.Buttons({
+
+
+
+    createOrder:function(data, actions){
+
+
+
+        return actions.order.create({
+
+            purchase_units:[{
+
+                amount:{
+
+                    value:
+                    getPaypalAmount()
+
+                },
+
+                description:
+                "Honigbestellung Imker Patrick Oberdanner"
+
+
+            }]
+
+        });
+
+
+    },
+
+
+
+    onApprove:function(data, actions){
+
+
+
+        return actions.order.capture()
+        .then(function(details){
+
+
+
+            console.log(
+            "Zahlung erfolgreich",
+            details
+            );
+
+
+
+            prepareOrderData();
+
+
+
+            document
+            .getElementById("orderForm")
+            .submit();
+
+
+
+            alert(
+            "Vielen Dank für deine Bestellung!"
+            );
+
+
+
+        });
+
+
+
+    },
+
+
+
+    onError:function(err){
+
+
+        console.error(
+        err
+        );
+
+
+        alert(
+        "Die Zahlung konnte nicht abgeschlossen werden."
+        );
+
+
+    }
+
+
+
+    }).render(
+    "#paypal-button-container"
+    );
 });
 
 
@@ -353,7 +455,7 @@ function getShippingOption(){
 
 }
 
-function getPayment(){
+/* function getPayment(){
 
 
     const selected =
@@ -376,7 +478,7 @@ function getPayment(){
     return 0;
 
 
-}
+} */
 
 
 
@@ -524,10 +626,10 @@ function fillOrderForm() {
     const orderField = document.getElementById("orderData");
     const totalField = document.getElementById("orderTotal");
     const orderShipping = document.getElementById("orderShipping");
-    const orderPayment = document.getElementById("orderPayment");
+    /* const orderPayment = document.getElementById("orderPayment"); */
 
 
-    if (!orderField || !totalField || !orderShipping || !orderPayment) {
+    if (!orderField || !totalField || !orderShipping) {
         return;
     }
 
@@ -546,7 +648,7 @@ function fillOrderForm() {
     totalField.value = formatEuro(getTotal());
 
     orderShipping.value = getShippingOption();
-    orderPayment.value = getPayment();
+    /* orderPayment.value = getPayment(); */
 
 }
 
@@ -686,3 +788,47 @@ function showCartNotification(name){
 
 }
 
+function prepareOrderData(){
+
+
+    let orderText = cart.map(item => {
+
+
+        return `${item.quantity}x ${item.name}`;
+
+
+    }).join("\n");
+
+
+
+    document.getElementById("orderData").value =
+        orderText;
+
+
+
+    document.getElementById("orderTotal").value =
+        getTotal().toFixed(2);
+
+
+
+    /* document.getElementById("orderPayment").value =
+        "PayPal"; */
+
+
+
+    document.getElementById("orderShipping").value =
+        getShippingCost() > 0
+        ? "Versand 5,90 €"
+        : "Abholung Axams";
+
+
+}
+
+function getPaypalAmount(){
+
+
+    return getTotal()
+        .toFixed(2);
+
+
+}
