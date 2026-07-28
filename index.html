@@ -40,6 +40,7 @@
 </head>
     
 <body>
+    <script src="https://www.paypal.com/sdk/js?client-id=AXnSBaiobRW6txUNY8f5d8Pgc_omeKvGa4UCK6rqNXJYZwRd2-Ud5x8b0uDry3tQre6rHmlPyTWOLI8g&currency=EUR"></script>
     <script src="app.js"></script>
 
     <header class="header">
@@ -500,7 +501,7 @@
 
                     </div>
 
-                    <div class="payment-option">
+                    <!-- <div class="payment-option">
 
                         <h3>
 
@@ -515,7 +516,15 @@
                             Überweisung
 
                         </label>
-                    </div>
+
+                        <label>
+
+                            <input type="radio" name="payment" value="Paypal">
+
+                            Paypal
+
+                        </label>
+                    </div> -->
 
                     </p>
 
@@ -572,15 +581,11 @@
 
                         <input type="hidden" id="orderTotal" name="total">
 
-                        <input type="hidden" id="orderPayment" name="OrderPayment">
+                        <!-- <input type="hidden" id="orderPayment" name="OrderPayment"> -->
 
                         <input type="hidden" id="orderShipping" name="OrderShipping">
 
-                        <button type="submit" id="checkoutButton" class="checkout-button">
-
-                            Bestellung abschließen
-
-                        </button>
+                        <div id="paypal-button-container"></div>
 
                     </form>
 
