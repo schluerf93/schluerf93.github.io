@@ -1,0 +1,1940 @@
+/* ==========================================================
+   IMKER PATRICK OBERDANNER
+   Premium Honey Design
+========================================================== */
+
+
+/* ==========================
+   RESET
+========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin:0;
+
+    background:#fffaf1;
+
+    color:#3d2b1f;
+
+    font-family:"Inter", sans-serif;
+
+    line-height:1.7;
+
+}
+
+
+
+img {
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+button {
+
+    font-family:inherit;
+
+}
+
+
+
+a {
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+
+/* ==========================
+   CONTAINER
+========================== */
+
+
+.container {
+
+    width:min(1200px, 90%);
+
+    margin:auto;
+
+}
+
+
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+
+
+h1,
+h2,
+h3 {
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    color:#382618;
+
+    line-height:1.2;
+
+}
+
+
+h1 {
+
+    font-size:
+    clamp(2.8rem,5vw,5rem);
+
+}
+
+
+
+h2 {
+
+    font-size:
+    clamp(2rem,4vw,3rem);
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+h3 {
+
+    font-size:1.5rem;
+
+}
+
+
+
+p {
+
+    color:#665548;
+
+}
+
+
+
+/* ==========================
+   HEADER
+========================== */
+
+
+.header {
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    z-index:1000;
+
+
+    background:
+    rgba(255,250,241,.9);
+
+
+    backdrop-filter:
+    blur(12px);
+
+
+    border-bottom:
+    1px solid rgba(0,0,0,.05);
+
+}
+
+
+
+.navbar {
+
+    height:85px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.logo {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+    font-weight:700;
+
+    font-size:1.1rem;
+
+    padding-left: 1rem;
+
+}
+
+
+
+.logo img {
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:contain;
+
+}
+
+
+
+.nav-links {
+
+    list-style:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:2rem;
+
+    padding-right:2rem;
+
+}
+
+
+
+.nav-links a {
+
+    transition:.25s;
+
+    font-weight:500;
+
+}
+
+
+
+.nav-links a:hover {
+
+    color:#c98b18;
+
+}
+
+
+
+/* Warenkorb oben */
+
+
+.cart-button {
+
+    background:#382618;
+
+    color:white!important;
+
+    padding:.6rem 1.1rem;
+
+    border-radius:999px;
+
+}
+
+
+
+#cartCount {
+
+    background:#e9c45d;
+
+    color:#382618;
+
+    padding:.1rem .45rem;
+
+    border-radius:50%;
+
+    margin-left:.3rem;
+
+}
+
+
+
+/* ==========================
+   HERO
+========================== */
+
+
+.hero {
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+
+    background:
+
+    linear-gradient(
+        rgba(45,30,15,.45),
+        rgba(45,30,15,.55)
+    ),
+
+    url("../img/Dummyimage.jpeg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+}
+
+
+
+.hero-content {
+
+    max-width:700px;
+
+    padding-top:90px;
+
+}
+
+
+
+.hero-subtitle {
+
+    color:#f8dc91;
+
+    text-transform:uppercase;
+
+    letter-spacing:.15em;
+
+    font-weight:600;
+
+}
+
+
+
+.hero h1 {
+
+    color:white;
+
+}
+
+
+
+.hero-text {
+
+    color:white;
+
+    font-size:1.2rem;
+
+    max-width:600px;
+
+}
+
+
+
+.hero-buttons {
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* ==========================
+   BUTTONS
+========================== */
+
+
+.btn-primary,
+.btn-secondary {
+
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    padding:1rem 2rem;
+
+
+    border-radius:999px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.btn-primary {
+
+
+    background:#d89b24;
+
+    color:white;
+
+
+    box-shadow:
+
+    0 15px 35px rgba(216,155,36,.35);
+
+
+}
+
+
+
+.btn-primary:hover {
+
+
+    transform:translateY(-3px);
+
+    background:#b77d13;
+
+
+}
+
+
+
+.btn-secondary {
+
+
+    color:white;
+
+    border:
+
+    2px solid rgba(255,255,255,.6);
+
+
+}
+
+
+
+.btn-secondary:hover {
+
+
+    background:white;
+
+    color:#382618;
+
+
+}
+
+
+
+/* ==========================
+   SECTIONS
+========================== */
+
+
+.intro,
+.facts,
+.products,
+.cart-section,
+.checkout-section {
+
+
+    padding:6rem 0;
+
+
+}
+
+
+
+/* ==========================
+   INTRO
+========================== */
+
+
+.intro-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(320px,1fr));
+
+
+    gap:4rem;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.intro-image {
+
+
+    height:500px;
+
+
+    border-radius:30px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.intro-image img {
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+
+}
+
+
+
+/* ==========================
+   FACT CARDS
+========================== */
+
+
+.fact-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+
+    gap:2rem;
+
+
+}
+
+
+
+.fact-card {
+
+
+    background:white;
+
+
+    padding:2rem;
+
+
+    text-align:center;
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.06);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.fact-card:hover {
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+.fact-card h3 {
+
+
+    font-size:2.5rem;
+
+
+}
+
+
+
+.fact-card h4 {
+
+
+    font-size:1.2rem;
+
+
+}
+/* ==========================================================
+   PRODUKTE
+========================================================== */
+
+
+.products {
+
+    background:
+    linear-gradient(
+        180deg,
+        #fffaf1,
+        #fff6df
+    );
+
+}
+
+
+
+.section-intro {
+
+    max-width:650px;
+
+    margin-bottom:3rem;
+
+}
+
+
+
+.product-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+
+    gap:2.5rem;
+
+
+}
+
+
+
+.product-card {
+
+
+    background:white;
+
+
+    border-radius:35px;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+
+    0 20px 60px rgba(0,0,0,.08);
+
+
+    transition:.35s;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.product-card:hover {
+
+
+    transform:translateY(-10px);
+
+
+    box-shadow:
+
+
+    0 30px 70px rgba(0,0,0,.12);
+
+
+}
+
+
+
+/*
+   Wichtig:
+   Egal ob Hochformat,
+   Querformat oder riesiges Bild:
+   alle Produktbilder sehen gleich aus.
+*/
+
+
+.product-image {
+
+
+    height:320px;
+
+
+    overflow:hidden;
+
+
+    position:relative;
+
+
+    background:#f4ead5;
+
+
+}
+
+
+
+.product-image img {
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+.product-card:hover .product-image img {
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+.product-content {
+
+
+    padding:2rem;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    flex:1;
+
+
+}
+
+
+
+.product-description {
+
+
+    flex-grow:1;
+
+
+}
+
+
+
+.product-price {
+
+
+    margin:1rem 0;
+
+
+}
+
+
+
+.price {
+
+
+    font-size:2rem;
+
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+
+    color:#c98b18;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+/* Warenkorb Button */
+
+
+.add-to-cart {
+
+
+    border:none;
+
+
+    cursor:pointer;
+
+
+    padding:1rem;
+
+
+    border-radius:999px;
+
+
+    background:#d89b24;
+
+
+    color:white;
+
+
+    font-size:1rem;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.add-to-cart:hover {
+
+
+    background:#b77d13;
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+
+/* ==========================================================
+   WARENKORB
+========================================================== */
+
+
+.cart-section {
+
+
+    background:#fff;
+
+
+}
+
+
+
+.cart-wrapper {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    minmax(300px,1fr)
+
+    380px;
+
+
+    gap:3rem;
+
+
+    align-items:start;
+
+
+}
+
+
+
+/* Artikel-Liste */
+
+
+.cart-items {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:1rem;
+
+
+}
+
+
+
+.empty-cart {
+
+
+    background:#fffaf1;
+
+
+    padding:2rem;
+
+
+    border-radius:25px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.cart-item {
+
+
+    background:white;
+
+
+    border-radius:25px;
+
+
+    padding:1.5rem;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    box-shadow:
+
+
+    0 10px 30px rgba(0,0,0,.06);
+
+
+}
+
+
+
+.cart-item-info h4 {
+
+
+    margin:0;
+
+
+    font-family:
+    "Playfair Display",
+    serif;
+
+
+}
+
+
+
+.cart-item-info p {
+
+
+    margin:.3rem 0 0;
+
+
+    color:#c98b18;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+/* Mengen Buttons */
+
+
+.cart-controls {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:.6rem;
+
+
+}
+
+
+
+.cart-controls button {
+
+
+    width:38px;
+
+
+    height:38px;
+
+
+    border:none;
+
+
+    border-radius:50%;
+
+
+    background:#f4d77b;
+
+
+    cursor:pointer;
+
+
+    font-size:1.2rem;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+.cart-controls button:hover {
+
+
+    transform:scale(1.1);
+
+
+}
+
+
+
+.cart-controls .remove {
+
+
+    background:#f1e8dd;
+
+
+}
+
+
+
+/* ==========================================================
+   WARENKORB ZUSAMMENFASSUNG
+========================================================== */
+
+
+.cart-summary {
+
+
+    background:#382618;
+
+
+    color:white;
+
+
+    border-radius:35px;
+
+
+    padding:2.5rem;
+
+
+    position:sticky;
+
+
+    top:110px;
+
+
+}
+
+
+
+.cart-summary h3 {
+
+
+    color:white;
+
+
+}
+
+
+
+.summary-row {
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    padding:1rem 0;
+
+
+    border-bottom:
+
+
+    1px solid rgba(255,255,255,.15);
+
+
+}
+
+
+
+.summary-row span:last-child {
+
+
+    font-weight:600;
+
+
+}
+
+
+
+.summary-row.total {
+
+
+    font-size:1.4rem;
+
+
+    margin-top:1rem;
+
+
+    border:none;
+
+
+}
+
+
+
+/* ==========================================================
+   LIEFERUNG & ZAHLUNG
+========================================================== */
+
+
+.shipping-option,
+.payment-option {
+
+
+    margin-top:2rem;
+
+
+}
+
+
+
+.shipping-option h3,
+.payment-option h3 {
+
+
+    font-size:1.2rem;
+
+
+    margin-bottom:1rem;
+
+
+}
+
+
+
+.shipping-option label,
+.payment-option label {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:.7rem;
+
+
+    padding:.8rem;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    border-radius:15px;
+
+
+    margin-bottom:.5rem;
+
+
+    cursor:pointer;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+.shipping-option label:hover,
+.payment-option label:hover {
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+}
+
+
+
+.shipping-option input,
+.payment-option input {
+
+
+    accent-color:#e9c45d;
+
+
+}
+
+/* ==========================================================
+   CHECKOUT
+========================================================== */
+
+
+.checkout-section {
+
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #fff6df,
+        #fffaf1
+    );
+
+
+}
+
+
+
+.checkout-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    minmax(300px,700px);
+
+
+    justify-content:center;
+
+
+}
+
+
+
+.checkout-form {
+
+
+    background:white;
+
+
+    padding:3rem;
+
+
+    border-radius:35px;
+
+
+    box-shadow:
+
+
+    0 20px 60px rgba(0,0,0,.08);
+
+
+}
+
+
+
+.checkout-form h3 {
+
+
+    margin-top:0;
+
+
+    margin-bottom:2rem;
+
+
+}
+
+
+
+/* ==========================
+   INPUTS
+========================== */
+
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="tel"] {
+
+
+    width:100%;
+
+
+    padding:1.1rem 1.3rem;
+
+
+    border-radius:18px;
+
+
+    border:
+
+
+    1px solid #eadcc5;
+
+
+    background:#fffdf8;
+
+
+    font-size:1rem;
+
+
+    margin-bottom:1rem;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+.checkout-form input:focus {
+
+
+    outline:none;
+
+
+    border-color:#d89b24;
+
+
+    background:white;
+
+
+    box-shadow:
+
+
+    0 0 0 4px rgba(216,155,36,.15);
+
+
+}
+
+
+
+.checkout-form input::placeholder {
+
+
+    color:#a18e7a;
+
+
+}
+
+
+
+/* ==========================
+   ABSENDEN
+========================== */
+
+
+.checkout-button {
+
+
+    width:100%;
+
+
+    margin-top:1.5rem;
+
+
+    padding:1.2rem;
+
+
+    border:none;
+
+
+    border-radius:999px;
+
+
+    background:#382618;
+
+
+    color:white;
+
+
+    font-size:1.1rem;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+.jumper {
+    display:flex;
+}
+
+
+.checkout-button:hover {
+
+
+    background:#5b3c20;
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+
+/* ==========================================================
+   PAYPAL
+========================================================== */
+
+
+#paypal-button-container {
+
+
+    margin-top:2rem;
+
+
+}
+
+
+
+.paypal-placeholder {
+
+
+    background:#fff6df;
+
+
+    border-radius:20px;
+
+
+    padding:1rem;
+
+
+    text-align:center;
+
+
+    margin-top:1rem;
+
+
+}
+
+
+
+.paypal-placeholder img {
+
+
+    width:120px;
+
+
+    margin:auto;
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   CART NOTIFICATION
+========================================================== */
+
+
+.cart-notification {
+
+
+    position:fixed;
+
+
+    bottom:30px;
+
+
+    right:30px;
+
+
+    background:#382618;
+
+
+    color:white;
+
+
+    padding:1rem 1.5rem;
+
+
+    border-radius:999px;
+
+
+    transform:
+
+
+    translateY(120px);
+
+
+    opacity:0;
+
+
+    transition:.3s;
+
+
+    z-index:3000;
+
+
+    box-shadow:
+
+
+    0 15px 40px rgba(0,0,0,.25);
+
+
+}
+
+
+
+.cart-notification.show {
+
+
+    transform:translateY(0);
+
+
+    opacity:1;
+
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@media(max-width:900px){
+
+
+    .navbar {
+
+
+        height:75px;
+
+
+    }
+
+
+
+    .logo span {
+
+
+        display:none;
+
+
+    }
+
+
+
+    .nav-links {
+
+
+        gap:1rem;
+
+
+    }
+
+
+
+    .hero {
+
+
+        min-height:90vh;
+
+
+    }
+
+
+
+    .intro-grid {
+
+
+        gap:2rem;
+
+
+    }
+
+
+
+    .cart-wrapper {
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+    .cart-summary {
+
+
+        position:static;
+
+
+    }
+
+
+
+    .checkout-form {
+
+
+        padding:2rem 1.5rem;
+
+
+    }
+
+
+
+}
+
+@media(max-width:380px){
+
+    .jumper {
+
+        display:none;
+
+    }
+    .header {
+
+
+        overflow:hidden;
+
+
+    }
+
+
+
+    .navbar {
+
+
+        width:94%;
+
+
+    }
+
+
+
+    .logo img {
+
+
+        width:40px;
+
+
+        height:40px;
+
+
+    }
+
+
+
+    .cart-button {
+
+
+        padding:.45rem .7rem;
+
+
+    }
+
+
+
+    #cartCount {
+
+
+        padding:.05rem .35rem;
+
+
+    }
+
+
+}
+
+
+@media(max-width:600px){
+
+
+    .jumper {
+
+        display:none;
+
+    }
+
+    h1 {
+
+
+        font-size:2.6rem;
+
+
+    }
+
+
+
+    h2 {
+
+
+        font-size:2rem;
+
+
+    }
+
+
+
+    .container {
+
+
+        width:92%;
+
+
+    }
+
+
+
+    .hero-buttons {
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .btn-primary,
+    .btn-secondary {
+
+
+        width:100%;
+
+
+    }
+
+
+
+    .cart-item {
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+        gap:1rem;
+
+
+    }
+
+
+
+    .cart-controls {
+
+
+        width:100%;
+
+
+        justify-content:flex-end;
+
+
+    }
+
+
+
+    .product-image {
+
+
+        height:260px;
+
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   ANIMATIONEN
+========================================================== */
+
+
+@keyframes fadeUp {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:translateY(30px);
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+
+    }
+
+
+}
+
+
+
+.hero-content {
+
+    padding:2rem;
+
+
+    animation:
+
+
+    fadeUp .8s ease;
+
+
+}
+
+
+
+/* ==========================================================
+   BESSERE BILDERDARSTELLUNG
+========================================================== */
+
+
+/*
+   Alle Bilder bekommen eine kontrollierte Darstellung.
+   Dadurch ist es egal, welche Auflösung dein Foto hat.
+*/
+
+
+.product-image img,
+.intro-image img {
+
+
+    object-position:center;
+
+
+}
+
+
+
+/*
+   Falls später Portraitfotos
+   vom Imker kommen:
+*/
+
+
+.about-image img {
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    border-radius:30px;
+
+
+}
+
