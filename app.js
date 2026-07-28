@@ -311,28 +311,20 @@ function getSubtotal(){
 
 
 
-function getShipping(){
+function getShipping() {
+
+    const delivery =
+        document.querySelector('input[name="delivery"]:checked');
 
 
-    const selected =
-    document.querySelector(
-        'input[name="delivery"]:checked'
-    );
-
-
-
-    if(selected &&
-       selected.value === "Abholung"){
-
-
+    if (!delivery) {
         return 0;
-
-
     }
 
 
-    return SHIPPING_COST;
-
+    return delivery.value === "shipping"
+        ? SHIPPING_COST
+        : 0;
 
 }
 
